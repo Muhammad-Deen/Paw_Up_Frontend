@@ -94,22 +94,46 @@ a:hover {
 .Dashboard {
     border-style: solid;
     margin: 10px; 
+    border-radius: 30px;
 
 }
 
 .ChatBot{
     border-style: solid;
     margin: 10px; 
+    border-radius: 30px;
 }
 
 .SideBar{
     border-style: solid;
     border-color: blue;
     margin: 10px; 
+    background-color: #8CAD4A;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
 }
 
 .image-assets {
-    border-style: solid;
-    border-color: green;
     margin: 10px; 
+    display: grid
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.image1{
+    width: 80%
+}
+
+.image2{
+    width: 60%;
+
+}
+
+.image3{
+    width: 40%
 }
