@@ -25,6 +25,17 @@
 
 }
 
+.ul li a {
+    text-decoration: none;
+    color: inherit;
+    padding: 10px;
+}
+
+.ul li a:hover {
+    color:#8CAD4A
+}
+
+
 .logo {
     width: 25rem; 
     margin-top: 10px;
@@ -48,8 +59,17 @@
     background-color: #8CAD4A;
     color: white; 
     border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
 
 }
+
+.button:hover {
+    background-color: #73963a;
+    cursor: pointer;
+}
+
+
 .main-content {
     width: 100%;
     flex: 1; 
@@ -65,7 +85,7 @@
 
 
 .Description-box {
-    padding-top: 100px ;
+    padding-top: 50px ;
     padding-bottom: 20px;
     grid-column: 1;
     grid-row: 1 / span 2;
@@ -93,13 +113,20 @@
 .Cat-image {
     grid-column: 1;
     grid-row: 2;
-    display: flex;
+    align-self: end; /* places image at bottom of the grid cell */
+    justify-self: center; /* centers horizontally */
+    position: relative; /* allows overflow without affecting layout */
+    overflow: visible; /* ensures image can overflow freely */
 }
+
 .Cat-image img {
-    width: 30%; /* adjust as necessary */
+    width: 70%; /* adjust based on your preference */
     height: auto;
-    padding-left: 50px;
+    display: block;
+    position: relative;
+    bottom: -90px; /* pushes image down to overlap footer slightly; adjust this as needed */
 }
+
 
 .Dog-image {
     grid-column: 2;
@@ -124,3 +151,134 @@
     background-color: #8CAD4A;
     min-height: 15vh;
 }
+
+/* ----------------------------- */
+/* RESPONSIVE BREAKPOINTS BELOW */
+/* ----------------------------- */
+
+/* Tablets & Smaller Desktops */
+@media (max-width: 1200px) {
+    .head-line-box {
+      font-size: 40px;
+    }
+  
+    .product-info-box {
+      font-size: 12px;
+      margin-bottom: 40px;
+    }
+  
+    .Cat-image img {
+      width: 35%;
+      bottom: -50px;
+      margin-top: 30px
+    }
+  
+    .Dog-image img {
+      width: 70%;
+    }
+  }
+  
+  /* Tablets & Large Phones */
+  @media (max-width: 900px) {
+    .main-content {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      gap: 30px;
+    }
+  
+    .Description-box {
+      text-align: center;
+      padding: 20px;
+      grid-column: 1;
+      grid-row: 1;
+    }
+  
+    .head-line-box {
+      margin-left: 0;
+      font-size: 35px;
+    }
+  
+    .product-info-box {
+      margin-left: 0;
+      font-size: 16px;
+      margin-bottom: 50px;
+    }
+  
+    .Dog-image {
+      grid-column: 1;
+      grid-row: 2;
+      padding-top: 20px;
+    }
+  
+    .Dog-image img {
+      width: 60%;
+    }
+  
+    .Cat-image {
+      grid-column: 1;
+      grid-row: 3;
+      margin-top: 30px;
+    }
+  
+    .Cat-image img {
+      width: 50%;
+      bottom: -40px;
+    }
+  
+    .navigation ul li {
+      font-size: 18px;
+    }
+  
+    .button {
+      padding: 8px 15px;
+      font-size: 16px;
+    }
+  }
+  
+  /* Mobile Phones */
+  @media (max-width: 600px) {
+    .navigation {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .logo {
+      width: 150px;
+      margin: 0 auto;
+    }
+  
+    .navigation ul {
+      margin: 10px 0;
+    }
+  
+    .navigation ul li {
+      font-size: 16px;
+      margin: 5px;
+    }
+  
+    .buttons {
+      flex-direction: column;
+    }
+  
+    .button {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .head-line-box {
+      font-size: 28px;
+    }
+  
+    .product-info-box {
+      font-size: 14px;
+    }
+  
+    .Cat-image img {
+      width: 60%;
+      bottom: -30px;
+    }
+  
+    .Dog-image img {
+      width: 60%;
+    }
+  }
