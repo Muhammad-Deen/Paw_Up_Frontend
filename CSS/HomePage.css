@@ -14,4 +14,102 @@
     padding: 10px;
     display: flex;
     flex-direction: column;
+
+}
+
+.navigation {
+    position: relative; 
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 10vh;
+
+}
+
+.User-Name {
+    margin: 10px; 
+    text-align: center;
+    left: 50%;
+    transform: translateX(-40%);
+}
+
+.User {
+    font-size: 40px;
+    font-weight: 400;
+    white-space: nowrap;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    padding: 10px;
+    font-size: 25px;
+}
+
+a:hover {
+    color:#8CAD4A
+}
+
+
+.logo {
+    width: 25rem; 
+    margin-top: 10px;
+    margin-left: 30px;
+}
+
+
+.button {
+    display: inline-block;
+    padding: 20px; 
+    font-size: 25px;
+    margin: 10px; 
+    background-color: #8CAD4A;
+    color: white; 
+    border-radius: 20px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+
+}
+
+.button:hover {
+    background-color: #73963a;
+    cursor: pointer;
+}
+
+.Main-Content{
+    border-style: solid;
+    height: 85vh;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+}
+
+.Middle-Content{
+    display: grid;
+    grid-template-rows: 2fr 1fr;
+    border-style: solid;
+    border-color: red;
+}
+
+.Dashboard {
+    border-style: solid;
+    margin: 10px; 
+
+}
+
+.ChatBot{
+    border-style: solid;
+    margin: 10px; 
+}
+
+.SideBar{
+    border-style: solid;
+    border-color: blue;
+    margin: 10px; 
+}
+
+.image-assets {
+    border-style: solid;
+    border-color: green;
+    margin: 10px; 
 }
