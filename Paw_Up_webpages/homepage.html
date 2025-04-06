@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link rel="stylesheet" href="/CSS/HomePage.css">
+    
 </head>
 <body>
     <div class="hero">
@@ -26,20 +27,56 @@
             </div>
             <div class="Middle-Content">
                 <div class="Chatbot">
-                    <header>
-                        <h2>Chatbot</h2>
+                <!-- Chatbot Header -->
+                   
+                    <header class="chat-header">
+                        <img class="chatbot-image" src="/assets/Group 2.png"/>
+                        <h2>Ask Paws AI</h2>
                     </header>
-                    <ul class="Chatbox">
-                        <li class="Chat-incoming">
-                            <p>Hi there how can I help?</p>
-                        </li>
-                        <li class="Chat-outgoing">
-                            <p>Paw Up Pet Insurance AI</p>
-                        </li>
-                    </ul>
-                    <div class="Chat-Input">
-                        <textarea placeholder="Ask Away!!!"></textarea>
+                
+                <!-- Chatbot Body -->
+
+                <div class="chat-body" >
+                    <div class="bot-message">
+                        <img class="chatbot-image" src="/assets/Group 2.png"/>
+                        <div class="bot-message-text">
+                            Hi I'm Paws, How Can I Help? 
+                        </div>
+                  
                     </div>
+                    <div class="user-message">
+                        <div class = "user-message-text">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                            <br>Delectus deleniti maiores neque numquam voluptas laudantium, 
+                            <br>corporis facere? Modi voluptates officia eligendi.
+                            <br>Ut ducimus neque enim recusandae sint dolorem. Eos, perspiciatis.
+                        </div>
+                    </div>
+                    <div class="bot-message thinking">
+                        <img class="chatbot-image" src="/assets/Group 2.png"/>
+                        <div class="bot-message-text">
+                            <div class="thinking-indicator">
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                                <div class="dot"></div>
+                            </div>
+                        </div>
+                  
+                    </div>
+                </div>  
+            
+                  <!-- Chatbot footer -->
+                  <div class="chat-footer">
+                    <form action="#" class="chat-form">
+                        <textarea placeholder="Message..." class="message-input"></textarea>
+                    </form>
+                    <div>
+                        <button class="send-btn"><img src="/assets/arrow_upward_24dp_1F1F1F_FILL0_wght400_GRAD0_opsz24.svg"/></button>
+                    </div>
+                </div>
+                
+                   
+                    
 
                 </div>
             </div>
