@@ -15,7 +15,4 @@ signInButton.addEventListener('click', function(event) {
         // If the login details are incorrect, show an error message
         alert('Incorrect email or password. Please try again.');
     }
-
-
-
 });
