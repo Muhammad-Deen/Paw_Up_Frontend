@@ -130,7 +130,8 @@ a:hover {
    height: 90%;
    background-color: rgba(254, 254, 254, 0.8); 
    border-radius: 30px;
-   
+   display: flex;
+    flex-direction: column;
 
 }
 
@@ -156,6 +157,7 @@ a:hover {
     gap: 20px;
     flex-direction: column;
     height: 70%; 
+    overflow-y: auto;
 }
 
 .bot-message{
