@@ -89,9 +89,3 @@ messageInput.addEventListener("keydown", (e) => {
 });
 
 sendMessageButton.addEventListener("click", (e) => handleOutgoingMessage(e));
-
-fetch("http://localhost:5000/chat", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ messages: chatHistory })
-})
