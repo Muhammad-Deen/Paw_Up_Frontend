@@ -4,9 +4,8 @@ const correctPassword = 'password123!'
 const signInButton = document.getElementById('signInButton');
 
 signInButton.addEventListener('click', function(event) {
-
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+    const email = document.getElementById('emailLogin').value;
+    const password = document.getElementById('passwordLogin').value;
 
     if (email === correctEmail && password === correctPassword) {
         window.location.href = "homepage.html"; 

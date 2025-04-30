@@ -3,10 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
+    <title>SignUp</title>
+    <link rel="stylesheet" href ="/CSS/LoginPage.css">
 </head>
 <body>
-    <h1>Sign Up</h1>
-    <h1>Mia was here as well</h1>
+
+    <div>
+        <nav class="navigation"> 
+            <ul class="ul">
+                <li><a href="homepage.html">Home</a></li>
+                <li>About Us</li>
+                <li>Pricing</li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class = "row">
+
+        <div class = "col-left">
+            <div class ="details-left">
+                <img src="/assets/Logo.png"  class="logo"/> 
+                <h1 class = "main-header"> Ready to Join?</h1>
+                <h2 class ="sub-heading"> Please enter your details below </h2>
+                <h2 class ="user-text"> Name: </h2>
+                <input class ="user-area" name="name" id="nameSignUp"></input>
+                <h2 class ="user-text"> Email: </h2>
+                <input class ="user-area" name="email" id="emailSignUp"></input>
+                <h2 class ="user-text"> Enter Password: </h2>
+                <input type="password" class ="user-area" id="passwordSignUp"></input>
+                <button id="signUpButton" class ="button"> Lets Go!</button>
+            </div>
+        </div>
+        <div class = "col-right">
+            <div class = "picture-right">
+                <img src="/assets/SignUpPage.png" class="picture"/>
+            </div>
+        </div>
+    </div>
+
+    <script src="/Paw_Up_webpages/signup.js"></script>
+
 </body>
 </html>
