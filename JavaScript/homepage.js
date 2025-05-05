@@ -1,4 +1,11 @@
+const hasLoggedIn = sessionStorage.getItem('hasLoggedIn');
 
+if (hasLoggedIn !== '1'){
+  alert('You must be logged in to view this page')
+  window.location.href = document.referrer || 'login.html';
+}
+
+const logoutButton = document.getElementById("logout-btn")
 const newChatButton = document.getElementById("new-chat-btn");
 
 const messageInput = document.querySelector(".message-input");
@@ -87,5 +94,10 @@ messageInput.addEventListener("keydown", async (e) => {
 
 sendMessageButton.addEventListener("click", async (e) => {
   await handleOutgoingMessage(e);
+});
+
+logoutButton.addEventListener('click', function(event) {
+  sessionStorage.setItem('hasLoggedIn','0');
+  window.location.href = "index.html";
 });
 

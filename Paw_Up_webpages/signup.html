@@ -11,7 +11,8 @@
     <div>
         <nav class="navigation"> 
             <ul class="ul">
-                <li><a href="homepage.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="homepage.html">Chat</a></li>
                 <li>About Us</li>
                 <li>Pricing</li>
             </ul>
@@ -32,6 +33,9 @@
                 <h2 class ="user-text"> Enter Password: </h2>
                 <input type="password" class ="user-area" id="passwordSignUp"></input>
                 <button id="signUpButton" class ="button"> Lets Go!</button>
+                <h2 class ="sub-heading">
+                    Already have an account? <a href="login.html">Login</a>
+                </h2>
             </div>
         </div>
         <div class = "col-right">
@@ -41,7 +45,11 @@
         </div>
     </div>
 
-    <script src="/JavaScript/signup.js"></script>
+    <footer style="text-align: center; padding: 20px;">
+        <button id="showUsersLink"> Show Users</button>
+        <button id="deleteUsersLink"> Delete Users</button>
+    </footer>
 
+    <script src="/JavaScript/signup.js"></script>
 </body>
 </html>
