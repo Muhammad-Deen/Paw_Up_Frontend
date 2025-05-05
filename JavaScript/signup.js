@@ -2,7 +2,7 @@ const signUpButton = document.getElementById('signUpButton');
 const showUsersLink = document.getElementById('showUsersLink');
 const deleteUsersLink = document.getElementById('deleteUsersLink');
 
-//Can remove when DB is connected
+//The following can be removed if connected to backend - this is the default database but changes when the user interacts and adds/deletes users.
 if (!localStorage.getItem('users')) {
     const defaultUsers = [
       { email: 'user1@example.com', password: 'password123!' },
@@ -25,7 +25,7 @@ signUpButton.addEventListener('click', function(event) {
 
     if (emailValid === 1 && passValid === 1){
         const users = JSON.parse(localStorage.getItem('users')) || [];
-        users.push({ email, password }); // You might want to hash the password!
+        users.push({ email, password });
         localStorage.setItem('users', JSON.stringify(users));
 
         alert("Signup successful! Redirecting to login...");
@@ -83,7 +83,7 @@ function isEmailValid(email){
     }
 }
 
-//Can remove button 
+//Can remove button when the database is set up
 showUsersLink.addEventListener('click', function(event) {
     const users = JSON.parse(localStorage.getItem("users")) || [];
 
@@ -100,6 +100,7 @@ showUsersLink.addEventListener('click', function(event) {
 });
 
 deleteUsersLink.addEventListener('click', function(event) {
+    //Change the emails that are wanted to be deleted
     const emailsToDelete = [
         "mia@example.com",
         "mia2@example.com"

@@ -1,4 +1,4 @@
-//The following can be removed if connected to backend
+//The following can be removed if connected to backend - this is the default database but changes when the user interacts and adds/deletes users.
 if (!localStorage.getItem('users')) {
     const defaultUsers = [
       { email: 'user1@example.com', password: 'password123!' },
@@ -11,6 +11,7 @@ if (!localStorage.getItem('users')) {
 }
 //end
 
+// Default - user is not logged in when they run the code. The variable is set as sessionStorage which means when the tab is closed it defaults back.  
 let hasLoggedIn = 0;
 
 const signInButton = document.getElementById('signInButton');
@@ -25,6 +26,7 @@ signInButton.addEventListener('click', function(event) {
     const isValidUser = users.some(user => user.email === email && user.password === password);
 
     if (isValidUser) {
+        //Username and password correct - user can login 
         sessionStorage.setItem('hasLoggedIn','1');
         window.location.href = "homepage.html";
     } else {
@@ -33,6 +35,7 @@ signInButton.addEventListener('click', function(event) {
     }
 });
 
+//Can remove button when the database is set up
 showUsersLink.addEventListener('click', function(event) {
     const users = JSON.parse(localStorage.getItem("users")) || [];
 
@@ -49,6 +52,7 @@ showUsersLink.addEventListener('click', function(event) {
 });
 
 deleteUsersLink.addEventListener('click', function(event) {
+    //Change the emails that are wanted to be deleted
     const emailsToDelete = [
         "mia@example.com",
         "mia2@example.com"

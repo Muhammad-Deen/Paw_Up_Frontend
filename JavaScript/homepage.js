@@ -1,5 +1,6 @@
 const hasLoggedIn = sessionStorage.getItem('hasLoggedIn');
 
+//Checks to see if the user has logged in - if not then reverts back to page they came from or login
 if (hasLoggedIn !== '1'){
   alert('You must be logged in to view this page')
   window.location.href = document.referrer || 'login.html';
