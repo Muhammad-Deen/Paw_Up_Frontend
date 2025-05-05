@@ -1,18 +1,11 @@
+
+const newChatButton = document.getElementById("new-chat-btn");
+
 const messageInput = document.querySelector(".message-input");
 const chatBody = document.querySelector(".chat-body");
 const sendMessageButton = document.querySelector(".send-btn");
 
-// Sample fallback responses
-const fallbackResponses = [
-  "That's interesting! Tell me more.",
-  "I'm here to help! 😊",
-  "Could you please clarify that?",
-  "Thanks for sharing!",
-  "Hmm... let me think about that.",
-  "Can you explain it in a different way?",
-  "Got it! What else would you like to know?"
-];
-
+const fallbackResponses = ["Error in Message"];
 const chatHistory = [];
 
 const createMessageElement = (content, classes) => {
@@ -54,15 +47,21 @@ const displayBotThinking = () => {
   return thinkingDiv;
 };
 
-const getBotReply = (msg) => {
-  const message = msg.toLowerCase();
-  if (message.includes("hello") || message.includes("hi")) return "Hey there! 👋";
-  if (message.includes("help")) return "Sure! What do you need help with?";
-  if (message.includes("bye")) return "Goodbye! Hope to see you again soon.";
-  return fallbackResponses[Math.floor(Math.random() * fallbackResponses.length)];
+const getBotReply = async (msg) => {
+  try {
+    const res = await fetch("http://localhost:8000/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message: msg }),
+    });
+    const data = await res.json();
+    return data.reply;
+  } catch (error) {
+    return "Oops! Something went wrong.";
+  }
 };
 
-const handleOutgoingMessage = (e) => {
+const handleOutgoingMessage = async (e) => {
   e.preventDefault();
 
   const userMessage = messageInput.value.trim();
@@ -74,18 +73,19 @@ const handleOutgoingMessage = (e) => {
 
   const thinkingDiv = displayBotThinking();
 
-  setTimeout(() => {
-    const botReply = getBotReply(userMessage);
-    thinkingDiv.remove();
-    displayBotMessage(botReply);
-    chatHistory.push({ role: "model", content: botReply });
-  }, 1000);
+  const botReply = await getBotReply(userMessage); // ✅ Awaiting response
+  thinkingDiv.remove();
+  displayBotMessage(botReply);
+  chatHistory.push({ role: "model", content: botReply });
 };
 
-messageInput.addEventListener("keydown", (e) => {
+messageInput.addEventListener("keydown", async (e) => {
   if (e.key === "Enter" && messageInput.value.trim()) {
-    handleOutgoingMessage(e);
+    await handleOutgoingMessage(e);
   }
 });
 
-sendMessageButton.addEventListener("click", (e) => handleOutgoingMessage(e));
+sendMessageButton.addEventListener("click", async (e) => {
+  await handleOutgoingMessage(e);
+});
+

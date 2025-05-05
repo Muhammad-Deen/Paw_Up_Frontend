@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
-    <link rel="stylesheet" href="/CSS/HomePage.css">
+    <link rel="stylesheet" href="/CSS/Homepage.css">
     
 </head>
 <body>
@@ -13,17 +13,24 @@
             <img src="/assets/Logo.png"  class="logo"/> 
 
             <div class="User-Name">
-                <h2 class="User">Welcome User</h2>
+                <h2 class="User">Welcome User</h2> 
             </div>
             
             <div class="buttons">
                 <a>Setting</a>
-                <a class="button" href="index.html">Log Out</a>
+                <!-- <a class="button" href="index.html">Log Out</a> -->
+                <a class="button" id="logout-button" href="#">Log Out</a>
+
             </div>
         </nav>
         <main class="Main-Content">
             <div class="SideBar">
-                Side Bar
+                <div class="sidebar-header">
+                    <button id="new-chat-btn" class="new-chat-button">+ New Chat</button>
+                </div>
+                <ul id="chat-list" class="chat-list">
+                    <!-- Chats will be populated here dynamically -->
+                </ul>
             </div>
             <div class="Middle-Content">
                 <div class="Chatbot">
@@ -45,24 +52,8 @@
                   
                     </div>
                     <div class="user-message">
-                        <!-- <div class = "user-message-text">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                            <br>Delectus deleniti maiores neque numquam voluptas laudantium, 
-                            <br>corporis facere? Modi voluptates officia eligendi.
-                            <br>Ut ducimus neque enim recusandae sint dolorem. Eos, perspiciatis.
-                        </div> -->
                     </div>
-                    <!-- <div class="bot-message thinking">
-                        <img class="chatbot-image" src="/assets/Group 2.png"/>
-                        <div class="bot-message-text">
-                            <div class="thinking-indicator">
-                                <div class="dot"></div>
-                                <div class="dot"></div>
-                                <div class="dot"></div>
-                            </div>
-                        </div>
-                  
-                    </div> -->
+
                 </div>  
             
                   <!-- Chatbot footer -->
@@ -98,5 +89,8 @@
     </div>
    
     <script src="/JavaScript/homepage.js"></script>
+
+
+
 </body>
 </html>
